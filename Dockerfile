@@ -34,7 +34,7 @@ RUN apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Download tigerVNC binaries  https://dl.bintray.com/tigervnc/stable/tigervnc-1.9.0.x86_64.tar.gz
-ADD https://master.dl.sourceforge.net/project/tigervnc/stable/1.9.0/tigervnc-debuginfo-1.9.0.x86_64.tar.gz?viasf=1 $HOME/tigervnc/tigervnc.tar.gz
+ADD https://master.dl.sourceforge.net/project/tigervnc/beta/1.9beta/tigervnc-1.8.90.x86_64.tar.gz?viasf=1 $HOME/tigervnc/tigervnc.tar.gz
 RUN tar xmzf $HOME/tigervnc/tigervnc.tar.gz -C $HOME/tigervnc/ && rm $HOME/tigervnc/tigervnc.tar.gz
 RUN cp -R $HOME/tigervnc/tigervnc-1.9.0.x86_64/* / && rm -rf $HOME/tigervnc/
 
