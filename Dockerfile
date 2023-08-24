@@ -1,5 +1,5 @@
-FROM ubuntu
-# FROM ubuntu:16.04
+# FROM ubuntu
+FROM ubuntu:16.04
 
 MAINTAINER Jacob <chenjr0719@gmail.com>
 
