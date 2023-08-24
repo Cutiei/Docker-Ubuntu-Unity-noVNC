@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "start serviceing"
+
 if [ ! -f $HOME/.vnc/passwd ] ; then
 
     if  [ -z "$PASSWORD" ] ; then
@@ -8,6 +10,8 @@ if [ ! -f $HOME/.vnc/passwd ] ; then
     fi
 
     echo "$USER:$PASSWORD" | chpasswd
+
+cat $HOME/password.txt
 
     # Set up vncserver
     su $USER -c "mkdir $HOME/.vnc && echo '$PASSWORD' | vncpasswd -f > $HOME/.vnc/passwd && chmod 600 $HOME/.vnc/passwd && touch $HOME/.Xresources"
@@ -39,5 +43,7 @@ if [ ! -z "$NGROK" ] ; then
                 su ubuntu -c "echo -e 'Ngrok URL = $NGROK_URL/vnc.html' > $HOME/ngrok/Ngrok_URL.txt"
         esac
 fi
+
+cat $HOME/ngrok/Ngrok_URL.txt
 
 /usr/bin/supervisord -n
